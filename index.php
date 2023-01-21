@@ -12,9 +12,9 @@ require_once('function/helper.php')
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IkhlasXYZ</title>
-    <link rel="icon" href="./img/unggulan/ikhlas-icon.svg">
-    <link rel="stylesheet" href="./style/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="icon" href="<?= BASE_URL . '/img/unggulan/ikhlas-icon.svg' ?>">
+    <link rel="stylesheet" href="<?= BASE_URL . '/style/bootstrap/css/bootstrap.css' ?>">
+    <link rel="stylesheet" href="<?= BASE_URL . '/style/style.css' ?>">
 </head>
 
 <body>
@@ -44,7 +44,7 @@ require_once('function/helper.php')
                                     <li class="nav-item active">
                                         <a class="nav-link" href="<?= BASE_URL ?>">Beranda</a>
 
-                                        
+
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="<?= BASE_URL . '/pages/tabel-harga.php' ?>">Harga</a>
@@ -108,7 +108,7 @@ require_once('function/helper.php')
                     </div>
                     <!-- Right Column -->
                     <div class="header-home right-column text-center d-flex justify-content-center pe-0">
-                        <img id="img-fluid" class="h-auto mw-100"  src="./img/unggulan/ikhlas_header.jpg" alt="" />
+                        <img id="img-fluid" class="h-auto mw-100" src="<?= BASE_URL . '/img/unggulan/ikhlas_header.jpg' ?>" alt="" />
                     </div>
                 </div>
             </div>
@@ -133,8 +133,8 @@ require_once('function/helper.php')
                         </div>
                         <h3 class="icon-title">Pantai Widuri</h3>
                         <p class="icon-caption">
-                            Pantai ini menjadi pantai dengan jarak paling 
-                            dekat dengan pusat kota. Hanya berjarak 3,4 km dari Alun-Alun 
+                            Pantai ini menjadi pantai dengan jarak paling
+                            dekat dengan pusat kota. Hanya berjarak 3,4 km dari Alun-Alun
                             Pemalang dan dapat ditempuh dengan waktu hanya sekitar 7 menit saja.
                         </p>
                     </div>
@@ -144,8 +144,8 @@ require_once('function/helper.php')
                         </div>
                         <h3 class="icon-title">Kali Suci Moga</h3>
                         <p class="icon-caption">
-                            Fasilitas di area pemandian ini masih sangat terbatas. Sarana pendukung 
-                            baru sebatas penyewaan ban. Ruang ganti masih seadanya serta toilet 
+                            Fasilitas di area pemandian ini masih sangat terbatas. Sarana pendukung
+                            baru sebatas penyewaan ban. Ruang ganti masih seadanya serta toilet
                             yang masih sederhana. Tidak ada looker penyimpanan barang.
                         </p>
                     </div>
@@ -155,8 +155,8 @@ require_once('function/helper.php')
                         </div>
                         <h3 class="icon-title">Rainbow Rafting</h3>
                         <p class="icon-caption">
-                            Jarak atau track untuk rafting di Rainbow Rafting ada dua pilihan yaitu 
-                            sepanjang 6 km menjelajahi 18 jeram dengan waktu tempuh 1,5 jam dan 9 km 
+                            Jarak atau track untuk rafting di Rainbow Rafting ada dua pilihan yaitu
+                            sepanjang 6 km menjelajahi 18 jeram dengan waktu tempuh 1,5 jam dan 9 km
                             menjelajahi 27 jeram yang memakan waktu kurang lebih dua jam.
                         </p>
                     </div>
