@@ -12,7 +12,7 @@ require_once('../function/helper.php')
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IkhlasXYZ</title>
-    <link rel="icon" href="<?= BASE_URL . '/img/unggulan/ikhlas-icon.svg' ?>">
+    <link rel="icon" href="<?= BASE_URL . '/img/icon/ikhlas-icon.svg' ?>">
     <link rel="stylesheet" href="<?= BASE_URL . '/style/bootstrap/css/bootstrap.css' ?>">
     <link rel="stylesheet" href="<?= BASE_URL . '/style/style.css' ?>">
 </head>
