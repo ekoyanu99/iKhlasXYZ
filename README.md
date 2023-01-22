@@ -8,7 +8,9 @@
 3. Formulir pemesanan tiket
 4. Daftar pesanan yang diambil dari database MySQL
 
-## Penggunaa
+## Link Figma : https://www.figma.com/file/d88TDaMRmYk3c4O7aQiUP2/iKhlasXYZ-Website?node-id=0%3A1&t=j9FK7yXP05EuHd5N-1
+
+## Penggunaan
 1. Letakkan folder **iKhlasXYZ** ke dalam folder htdocs XAMPP
 2. Jalankan _XAMPP -> Apache_.
 3. Jalankan _XAMPP -> MySQL_.
