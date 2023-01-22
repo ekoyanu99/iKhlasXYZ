@@ -36,7 +36,7 @@
                     " </li>";
                     echo          "<li class='list-group-item'><strong>TEMPAT WISATA</strong>          :</br> " . $p['tempat_wisata'];
                     " </li>";
-                    echo          "<li class='list-group-item'><strong>TANGGAL KEBERANGKATAN</strong>    :</br> " . $p['tgl_kunjungan'];
+                    echo          "<li class='list-group-item'><strong>TANGGAL KUNJUNGAN</strong>    :</br> " . $p['tgl_kunjungan'];
                     " </li>";
                     echo          "<li class='list-group-item'><strong>JUMLAH PENUGUNJUNG</strong>         :</br> " . $p['pengunjung_dewasa'];
                     " </li>";
