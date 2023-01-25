@@ -42,10 +42,10 @@ function tambah($data, $harga_tiket_str, $hasil_total_pembayaran){
     return mysqli_affected_rows($conn_db);
 }
 //hitung total bayar berdasarkan tempat
-function hitungTotalBayar($dewasa,$anak,$hargaTiket,$diskon ){
-    $bayar_dewasa =  $dewasa*$hargaTiket;
+function hitungTotalBayar($nonAnak,$anak,$hargaTiket,$diskon ){
+    $bayar_non_anak =  $nonAnak*$hargaTiket;
     $bayar_anak = $anak*$hargaTiket*$diskon;
-    $total_pembayaran = $bayar_dewasa+$bayar_anak;
+    $total_pembayaran = $bayar_non_anak+$bayar_anak;
 
     return $total_pembayaran;
 }
