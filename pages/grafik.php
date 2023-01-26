@@ -1,6 +1,6 @@
 <?php
 
-require_once('function/helper.php')
+require_once('../function/helper.php')
 
 ?>
 
@@ -96,115 +96,46 @@ require_once('function/helper.php')
                     </div>
                 </div>
             </nav>
-            <!-- KOLOM -->
-            <div>
-                <div class="mx-auto d-flex flex-lg-row flex-column hero">
-                    <!-- Left Column -->
-                    <div class="left-column d-flex flex-lg-grow-1 flex-column align-items-lg-start text-lg-start align-items-center text-center">
-                        <p class="text-caption"></p>
-                        <h1 class="title-text-big">
-                            Cepat, nyaman dan aman untuk liburan anda
-                        </h1>
-                        <div class="d-flex flex-sm-row flex-column align-items-center mx-lg-0 mx-auto justify-content-center gap-3">
-
-                            <button class="btn d-inline-flex mb-md-0 btn-try text-white btn-pesan">
-                                <a href="<?= BASE_URL . '/pages/form-pemesanan.php' ?>" class="pesan-tiket">
-                                    Pesan Tiket
-                                </a>
-                            </button>
-
-                        </div>
-                    </div>
-                    <!-- Right Column -->
-                    <div class="header-home right-column text-center d-flex justify-content-center pe-0">
-                        <img id="img-fluid" class="h-auto mw-100" src="<?= BASE_URL . '/img/unggulan/ikhlas_header.jpg' ?>" alt="" />
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
     <!-- MAIN -->
     <section class="h-100 w-100 bg-white" style="box-sizing: border-box">
         <div class="content-2-1 container-xxl mx-auto p-0 position-relative" style="font-family: 'Poppins', sans-serif">
-            <div class="text-center title-text">
-                <h1 class="text-title">Pilihan Unggulan Tempat Wisata</h1>
-                <p class="text-caption" style="margin-left: 3rem; margin-right: 3rem">
-                    Anda bisa memilih tempat wisata sesuai keinginan
-                </p>
-            </div>
+            <?php
+            //koneksi db dengan localhost
+            $conn_db = mysqli_connect("localhost", "root", "", "db_ikhlas");
+            //script query
+            $query = "SELECT * FROM pengunjung_wisata";
+            //melakukan query data dari db
+            $result = mysqli_query($conn_db, $query);
 
-            <div class="grid-padding text-center">
-                <div class="row">
-                    <div class="col-lg-4 column">
-                        <div class="icon icon-pointer">
-                            <img src="./img/unggulan/beach-umbrella.svg" alt="" srcset="">
-                        </div>
-                        <h3 class="icon-title">Pantai Widuri</h3>
-                        <p class="icon-caption">
-                            Pantai ini menjadi pantai dengan jarak paling
-                            dekat dengan pusat kota. Hanya berjarak 3,4 km dari Alun-Alun
-                            Pemalang dan dapat ditempuh dengan waktu hanya sekitar 7 menit saja.
-                        </p>
-                    </div>
-                    <div class="col-lg-4 column">
-                        <div class="icon icon-pointer">
-                            <img src="./img/unggulan/swimming-pool.svg" alt="" srcset="">
-                        </div>
-                        <h3 class="icon-title">Kali Suci Moga</h3>
-                        <p class="icon-caption">
-                            Fasilitas di area pemandian ini masih sangat terbatas. Sarana pendukung
-                            baru sebatas penyewaan ban. Ruang ganti masih seadanya serta toilet
-                            yang masih sederhana. Tidak ada looker penyimpanan barang.
-                        </p>
-                    </div>
-                    <div class="col-lg-4 column">
-                        <div class="icon icon-pointer">
-                            <img src="./img/unggulan/rafting.svg" alt="" srcset="">
-                        </div>
-                        <h3 class="icon-title">Rainbow Rafting</h3>
-                        <p class="icon-caption">
-                            Jarak atau track untuk rafting di Rainbow Rafting ada dua pilihan yaitu
-                            sepanjang 6 km menjelajahi 18 jeram dengan waktu tempuh 1,5 jam dan 9 km
-                            menjelajahi 27 jeram yang memakan waktu kurang lebih dua jam.
-                        </p>
-                    </div>
-                </div>
+            $rows = [];
+
+            //memecah data menjadi array asosiatif
+            while ($row = mysqli_fetch_assoc($result)) {
+                $rows[] = $row;
+            }
+
+            //store data untuk grafik dari db
+            $data = array();
+            foreach ($rows as $p) {
+                if (!isset($data[$p['tempat_wisata']])) {
+                    $data[$p['tempat_wisata']] = 0;
+                }
+                $data[$p['tempat_wisata']] += $p['pengunjung_dewasa'] + $p['pengunjung_anak'];
+            }
+
+            ?>
+
+
+            <div class="container mt-5 mb-5 border rounded-3 p-4 shadow-lg container-mobile" style="width: 90%">
+                <canvas id="myChart">
+
+                </canvas>
             </div>
         </div>
     </section>
-    <section class="h-100 w-100 bg-white" style="box-sizing: border-box">
-        <div class="content-2-1 container-xxl mx-auto p-0 position-relative" style="font-family: 'Poppins', sans-serif">
-            <div class="card-block">
-                <div class="card">
-                    <div class="d-flex flex-lg-row flex-column align-items-center">
-                        <div class="me-lg-3">
-                            <img src="./img/tiket.png" alt="tiket diskon" width="150px" />
-                        </div>
-                        <div class="flex-grow-1 text-lg-start text-center card-text">
-                            <h3 class="card-title">
-                                Dapatkan Promo <br />Spesial Awal Tahun hingga 30%
-                            </h3>
-                            <p class="card-caption">
-                                Dapatkan promo spesial awal tahun untuk liburan anda
-                                kemanapun seluruh wilayah Pemalang, promo berlaku tanggal 22 - 31
-                                Januari 2023.
-                            </p>
-                        </div>
-                        <div class="card-btn-space">
-                            <button class="btn btn-card text-white btn-pesan-skrg">
-                                <a href="<?= BASE_URL . '/pages/form-pemesanan.php' ?>" class="pesan-tiket-promo">
-                                    Pesan Sekarang
-                                </a>
-                            </button>
-                            <button class="btn btn-outline">Ingatkan nanti</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- FOOTER -->
     <section class="h-100 w-100 bg-white" style="box-sizing: border-box">
         <div class="footer-2-1 container-xxl mx-auto position-relative p-0" style="font-family: 'Poppins', sans-serif">
@@ -299,7 +230,32 @@ require_once('function/helper.php')
         </div>
     </section>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
     <script src="<?= BASE_URL . '/style/bootstrap/js/bootstrap.js' ?>"></script>
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: <?php echo json_encode(array_keys($data)); ?>,
+                datasets: [{
+                    label: 'Jumlah Pengunjung',
+                    data: <?php echo json_encode(array_values($data)); ?>,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>

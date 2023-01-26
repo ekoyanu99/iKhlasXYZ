@@ -14,7 +14,7 @@
                     <!-- nik -->
                     <div class="mb-4">
                         <label for="noid" class="form-label">Nomor Identitas (KTP)</label>
-                        <input type="int" class="form-control" id="noid" name="nomor-identitas" placeholder="3301234567892432" required maxlength="16" />
+                        <input type="int" class="form-control" id="noid" name="nomor-identitas" placeholder="3301234567892432" required minlength="16" maxlength="16" />
                         <div id="emailHelp" class="form-text">
                             Pastikan NIK berjumlah 16 digit
                         </div>

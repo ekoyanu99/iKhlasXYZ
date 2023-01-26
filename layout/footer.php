@@ -19,6 +19,9 @@
                                     <a href="<?= BASE_URL . '/pages/tempat-wisata.php' ?>" class="list-menu">Tempat Wisata</a>
                                 </li>
                                 <li class="list-space">
+                                    <a href="<?= BASE_URL . '/pages/grafik.php' ?>" class="list-menu">Grafik</a>
+                                </li>
+                                <li class="list-space">
                                     <a href="<?= BASE_URL . '/pages/kontak.php' ?>" class="list-menu">Kontak</a>
                                 </li>
                             </nav>
@@ -89,7 +92,10 @@
         </div>
     </section>
 
-    <script src="<?= BASE_URL . '/style/bootstrap/js/bootstrap.js' ?>"></script>
-</body>
 
-</html>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="<?= BASE_URL . '/style/bootstrap/js/bootstrap.js' ?>"></script>
+    <script src="<?= BASE_URL . '/function/chart.js' ?>"></script>
+    </body>
+
+    </html>

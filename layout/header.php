@@ -53,6 +53,12 @@ require_once('../function/helper.php')
                                         <a class="nav-link" href="<?= BASE_URL . '/pages/tempat-wisata.php' ?>">Tempat Wisata</a>
                                     </li>
                                     <li class="nav-item">
+                                        <a class="nav-link" href="<?= BASE_URL . '/pages/tempat-wisata.php' ?>">Tempat Wisata</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="<?= BASE_URL . '/pages/grafik.php' ?>">Grafik</a>
+                                    </li>
+                                    <li class="nav-item">
                                         <a class="nav-link" href="<?= BASE_URL . '/pages/kontak.php' ?>">Kontak</a>
                                     </li>
                                 </ul>
@@ -76,6 +82,9 @@ require_once('../function/helper.php')
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?= BASE_URL . '/pages/tempat-wisata.php' ?>">Tempat Wisata</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= BASE_URL . '/pages/grafik.php' ?>">Grafik</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?= BASE_URL . '/pages/kontak.php' ?>">Kontak</a>
